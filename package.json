@@ -1,0 +1,22 @@
+{
+  "name": "notifications-page-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Notifications page coding challenge](./design/desktop-preview.jpg)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohit-k-Mummon/Notifications-page-main.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohit-k-Mummon/Notifications-page-main/issues"
+  },
+  "homepage": "https://github.com/Mohit-k-Mummon/Notifications-page-main#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}

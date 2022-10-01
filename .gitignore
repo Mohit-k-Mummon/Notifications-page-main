@@ -17,3 +17,7 @@
 
 *.md
 /design
+/dist
+/node_modules
+/.parcel-cache
+/package-lock.json
