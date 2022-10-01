@@ -36,6 +36,10 @@ html {
     font-size: 62.5%;
 }
 
+a {
+    text-decoration: none;
+}
+
 
 
 
@@ -63,7 +67,9 @@ body {
         max-width: 70rem;
         min-height: fit-content;
         border-radius: 15px;
-        padding: 4rem 3rem 3rem 3rem;
+        padding: 3rem 3rem 0 3rem;
+        position: relative;
+        bottom: 1rem;
     }
 }
 
@@ -80,15 +86,22 @@ body {
 }
 
 .block__header :nth-child(1) {
-    font-size: 2rem;
+    font-size: clamp(2rem, 2vw + 1rem, 2.2rem);
     font-weight: bold;
 }
 
-.block__header :last-child {
-    font-size: 1.4rem;
+.block__header :nth-child(2) {
+    font-size: clamp(1.4rem, 1vw + 1rem, 1.5rem);
     color: var(--Dark-grayish-blue);
     padding-bottom: 1px;
+    cursor: pointer;
 }
+
+.block__header :nth-child(2):hover {
+    color: var(--Blue);
+}
+
+
 
 .block__header .notifications-count {
     align-items: center;
@@ -106,6 +119,12 @@ body {
     width: 3.2rem;
 }
 
+@media screen and (min-width:768px) {
+    .block__header {
+        padding-bottom: 2rem;
+    }
+}
+
 
 
 /**************** 
@@ -118,45 +137,115 @@ body {
 
 .block__notifications-container .notification {
     display: flex;
-    padding: 1.5rem;
+    padding: 1.6rem;
     font-size: 1.4rem;
     border-radius: 5px;
     margin-bottom: 1rem;
+    position: relative;
 }
 
+@media screen and (min-width: 768px) {
+    .block__notifications-container .notification {
+        margin-bottom: 0.8rem;
+    }
+}
+
+
+/* Unread state modifier */
 .unread {
     background-color: var(--Very-light-grayish-blue);
 }
+
+
 
 .notification-content {
     color: var(--Dark-grayish-blue);
     line-height: 1.3;
 }
 
-.notification-content .name {
+
+/* Names */
+.notification-content .name a {
     color: #111;
     font-weight: 800;
 }
 
-.notification-content .post {
+.notification-content .name a:hover {
+    color: var(--Blue);
+}
+
+
+/* Posts */
+.notification-content .post a {
+    font-weight: 800;
+    color: var(--Grayish-blue);
+}
+
+.notification-content .post a:hover {
+    color: var(--Blue);
+}
+
+
+/* Groups */
+.notification-content .group a {
+    text-decoration: none;
+    color: var(--Blue);
     font-weight: 800;
 }
 
+
+/* Avatars */
 .notification .notification-avatar {
     height: 4rem;
     margin-right: 1.5rem;
 }
 
-.notification-content .red-dot {
+
+/* Red Dot */
+.notification.unread .red-dot {
     height: 8px;
     width: 8px;
-    border-radius: 100%;
+    border-radius: 50%;
     display: inline-block;
     background-color: var(--Red);
     margin-left: 5px;
 }
 
+
+/* Time */
 .notification-content .time {
     font-size: 1.4rem;
     color: var(--Grayish-blue);
+}
+
+
+/* Private messages */
+.notification-content .message {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid var(--Light-grayish-blue-1);
+    border-radius: 5px;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.notification-content .message a {
+    color: var(--Dark-grayish-blue);
+}
+
+.notification-content .message:hover {
+    background-color: var(--Light-grayish-blue-1);
+}
+
+@media screen and (min-width:768px) {
+    .notification .message {
+        padding: 1.5rem 2.2rem;
+    }
+}
+
+
+/* Picture comments */
+.notification .picture {
+    height: 4rem;
+    margin-left: auto;
 }
