@@ -24,11 +24,20 @@ function count() {
 
 // Toggles unread messages and updates notifications
 toggle.addEventListener('click', () => {
-	for (let i = 0; i < collection.length; i++) {
-		if (collection[i].classList.contains('unread')) {
+	if (toggle.innerText === 'Mark all as read') {
+		for (let i = 0; i < collection.length; i++) {
+			if (collection[i].classList.contains('unread')) {
+				collection[i].classList.toggle('unread');
+			}
+		}
+		notifications.style.display = 'none';
+		toggle.innerText = 'Mark all unread';
+	} else {
+		for (let i = 0; i < collection.length; i++) {
 			collection[i].classList.toggle('unread');
 		}
+		toggle.innerText = 'Mark all as read';
+		notifications.style.display = 'inline-flex';
+		notifications.innerText = count();
 	}
-	// notifications.innerText = count();
-	notifications.style.display = 'none';
 });
