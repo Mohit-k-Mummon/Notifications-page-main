@@ -30,7 +30,7 @@ toggle.addEventListener('click', () => {
 				collection[i].classList.toggle('unread');
 			}
 		}
-		notifications.style.visibility = 'none';
+		notifications.style.visibility = 'hidden';
 		toggle.innerText = 'Mark all unread';
 	} else {
 		for (let i = 0; i < collection.length; i++) {
