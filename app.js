@@ -30,14 +30,14 @@ toggle.addEventListener('click', () => {
 				collection[i].classList.toggle('unread');
 			}
 		}
-		notifications.style.display = 'none';
+		notifications.style.visibility = 'none';
 		toggle.innerText = 'Mark all unread';
 	} else {
 		for (let i = 0; i < collection.length; i++) {
 			collection[i].classList.toggle('unread');
 		}
 		toggle.innerText = 'Mark all as read';
-		notifications.style.display = 'inline-flex';
+		notifications.style.visibility = 'visible';
 		notifications.innerText = count();
 	}
 });
